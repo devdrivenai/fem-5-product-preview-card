@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --prim-dark-cyan: hsl(158, 36%, 37%);
+  --prim-cream: hsl(30, 38%, 92%);
+  --darkest-blue: hsl(212, 21%, 14%);
+  --dark-gray-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  --serif: "Fraunces", serif;
+  --sans-serif: "Montserrat", sans-serif;
+}
+
+body {
+  min-block-size: 100vh;
+  align-content: center;
+
+  font-family: var(--sans-serif);
+  font-weight: 500;
+  font-size: .875rem;
+  
+  color: var(--dark-gray-blue);
+  background: var(--prim-cream);
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+main {
+  inline-size: min(90%, 25rem);
+  margin-inline: auto;
+  margin-block: 1.5rem;
+
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, .1);
+
+  display: grid;
+}
+
+.product-image {
+  object-fit: contain;
+}
+
+.product-image img {
+  border-radius: 10px 10px 0 0;
+}
+
+.content {
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.description {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
+
+p.tag {
+  font-weight: 600;
+  font-size: .75rem;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  opacity: .8;
+}
+
+h2.product-title {
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1;
+
+  color: var(--darkest-blue);
+}
+
+.description-copy {
+  font-weight: 600;
+  line-height: 1.5;
+  opacity: .8;
+}
+
+.cta {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.actual-price {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 2rem;
+
+  color: var(--prim-dark-cyan);
+}
+
+.usual-price {
+  text-decoration: line-through;
+}
+
+.cta-btn {
+  inline-size: 100%;
+  border: none;
+  border-radius: 10px;
+  padding-block: 1rem;
+
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  background: var(--prim-dark-cyan);
+  color: var(--white);
+  transition: background 300ms ease-in-out; 
+}
+
+.cta-btn:hover {
+  background: var(--darkest-blue);
+  cursor: pointer;
+}
+
+.cta-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .7rem;
+}
+
+@media (min-width: 37.5rem) {
+  main {
+    inline-size: min(90%, 37.5rem);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-image img {
+    block-size: 0;
+    min-block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+  }
+}
